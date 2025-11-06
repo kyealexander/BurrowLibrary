@@ -1,0 +1,13 @@
+services:
+  burrowlibrary:
+    build: .
+    image: burrowlibrary:latest
+    container_name: burrowlibrary
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

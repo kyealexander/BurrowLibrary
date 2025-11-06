@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>Burrow Library API</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="../static/style.css">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <header class="header">
+        <div class="logo" aria-hidden="true">🦔</div>
+        <div>
+          <h1>Echidna's Burrow Library</h1>
+          <p class="lead">A tiny library API.</p>
+        </div>
+      </header>
+
+      <main>
+        <section class="card">
+          <h3>Available Volumes</h3>
+          <p>These are public files the Burrow Library willingly lends.</p>
+
+          <ul class="volumes">
+            {% for f in files %}
+              <li><a href="/api/get?file={{f}}">{{ f }}</a></li>
+            {% endfor %}
+          </ul>
+
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Author: <a href="https://kyemurphy.com">Kye Murphy</a></p>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
